@@ -1401,7 +1401,7 @@ const sayL = (who, s) => ({ type: 'say', who, side: 'left', segs: typeof s === '
 const sayR = (who, s) => ({ type: 'say', who, side: 'right', segs: typeof s === 'string' ? plain(s) : s });
 const sayWell = (who, s) => ({ type: 'say', who, photo: 'well', segs: typeof s === 'string' ? plain(s) : s });
 const sayMemory = (who, s) => ({ type: 'say', who, photo: 'grandpaMemory', segs: typeof s === 'string' ? plain(s) : s });
-const narrL = s => ({ type: 'narr', segs: plain(s) });
+const narrL = s => ({ type: 'narr', segs: typeof s === 'string' ? plain(s) : s });
 const keycard = (title, cards) => ({ type: 'keycard', title, cards });
 
 const AMI_INTRO_PART1 = [                          // 아미동 비석마을 도착 (점프맵 완료 직후): 나레이션만 먼저 재생 (이후 마을 맵이 나타남)
